@@ -7,4 +7,4 @@
 
 * sudo apt-get install python-qt4-doc
 
-  default path on ubuntu: /usr/share/doc/python-qt4-doc/examples
+  default install location on ubuntu: /usr/share/doc/python-qt4-doc/examples
