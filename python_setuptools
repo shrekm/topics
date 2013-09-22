@@ -25,11 +25,31 @@ difference between 'distutils' and 'setuptools':
   . It should work well with pip.
 
 
-#how to install python setuptools correctly on ubuntu:
+# how to install python setuptools correctly on ubuntu:
 * $wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python
 or
-*wget -q http://peak.telecommunity.com/dist/ez_setup.py
-*python ez_setup.py
+* wget -q http://peak.telecommunity.com/dist/ez_setup.py
+* python ez_setup.py
+
+next:
+when setuuptools is ready. which one should we use for package installation, "easy_install" or "pip"?
+
+pip was originally written to improve on easy_install in the following ways:
+.All packages are downloaded before installation. Partially-completed installation doesn’t occur as a result.
+.Care is taken to present useful output on the console.
+.The reasons for actions are kept track of. For instance, if a package is being installed, pip keeps track of why that package was required.
+.Error messages should be useful.
+.The code is relatively concise and cohesive, making it easier to use programmatically.
+.Packages don’t have to be installed as egg archives, they can be installed flat (while keeping the egg metadata).
+.Native support for other version control systems (Git, Mercurial and Bazaar)
+.Uninstallation of packages.
+.Simple to define fixed sets of requirements and reliably reproduce a set of packages.
+
+pip doesn’t do everything that easy_install does. Specifically:
+.It cannot install from eggs. It only installs from source. (In the future it would be good if it could install binaries from Windows .exe or .msi – binary install on other platforms is not a priority.)
+.It is incompatible with some packages that extensively customize distutils or setuptools in their setup.py files.
+
+
 
 #how to install pip correctly on ubuntu:
 * $easy_install pip
