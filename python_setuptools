@@ -25,12 +25,13 @@ difference between 'distutils' and 'setuptools':
   . It should work well with pip.
 
 
-# how to install python setuptools correctly on ubuntu:
-
+#how to install python setuptools correctly on ubuntu:
 * $wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python
+or
+*wget -q http://peak.telecommunity.com/dist/ez_setup.py
+*python ez_setup.py
 
-# how to install pip correctly on ubuntu:
-
+#how to install pip correctly on ubuntu:
 * $easy_install pip
 or
 * $curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
