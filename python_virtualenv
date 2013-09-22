@@ -24,7 +24,7 @@ $ virtualenv --python=/opt/python-2.7/bin/python myenv_python2.7
 
 #advanced usage of virtualenv
 
-*create env using bootstrap script to set up a particular environment of you own.
+*create env using bootstrap script to set up a particular environment of your own.
  
 1: first create an example_bootstrap.py, the content of example_bootstrap.py show as below:
 $ cat example_bootstrap.py
