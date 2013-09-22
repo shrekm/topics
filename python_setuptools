@@ -1,0 +1,24 @@
+Both of 'distutils' and 'setuptools' all are the tool for installing and managing Python packages written in Python.
+
+difference between 'distutils' and 'setuptools':
+
+* distutils is still the standard tool for packaging in Python. 
+  . It is the standard library of python (Python 2 and Python 3.0 to 3.3). 
+  . It is useful for simple Python distributions, but lacks features. 
+  . it introduces the distutils Python package that can be imported in your setup.py script.
+
+'distutils The main package for the Python Module Distribution Utilities.
+ Normally used from a setup script as from distutils.core import setup  setup (...)'
+
+* setuptools is a python project. It is and extensions to the 'distutils' for large or complex distributions
+  . It is not a standard library of python. 
+  . It introduced a command-line utility called easy_install. 
+  . It also introduced the setuptools Python package that can be imported in your setup.py script, 
+    and the pkg_resources Python package that can be imported in your code to locate data files 
+    installed with a distribution. One of its gotchas is that it monkey-patches the distutils Python package. 
+  . It should work well with pip.
+
+
+# how to install python setuptools correctly:
+
+* $wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python   
