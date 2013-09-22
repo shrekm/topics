@@ -24,6 +24,13 @@ difference between 'distutils' and 'setuptools':
     installed with a distribution. One of its gotchas is that it monkey-patches the distutils Python package. 
   . It should work well with pip.
 
+  example:
+    >>> import setuptools
+    >>> setuptools.__file__
+    '/usr/local/lib/python2.7/dist-packages/distribute-0.6.49-py2.7.egg/setuptools/__init__.pyc'
+    >>> setuptools.__doc__
+    "Extensions to the 'distutils' for large or complex distributions"
+
 
 # how to install python setuptools correctly on ubuntu:
 * $wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python
