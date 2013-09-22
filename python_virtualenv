@@ -1,4 +1,4 @@
-
+virtualenv is a tool to create isolated Python environments.
 
 #how to install virtualenv
 $ sudo apt-get install python-virtualenv
@@ -22,12 +22,13 @@ $ virtualenv --python=/opt/python-3.3/bin/python myenv_python3.3
 $ virtualenv --python=/opt/python-2.7/bin/python myenv_python2.7
 
 
-#adnvanced usage of virtualenv:
- *use bootstrap.py to config virtual env and install depend library
+#advanced usage of virtualenv
+
+*create env using bootstrap script to set up a particular environment of you own.
  
 1: first create an example_bootstrap.py, the content of example_bootstrap.py show as below:
 $ cat example_bootstrap.py
-"""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import virtualenv, textwrap
 output = virtualenv.create_bootstrap_script(textwrap.dedent("""
 import os, subprocess
@@ -38,7 +39,7 @@ def after_install(options, home_dir):
     subprocess.call([join(home_dir, 'bin' , 'pip'), 'install', 'requests'])
 """))
 f = open('blog-bootstrap.py', 'w').write(output)
-"""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 2: generate target script:
 $ python example_bootstrap.py > create_env.py
@@ -46,6 +47,7 @@ $ python example_bootstrap.py > create_env.py
 3: build example env with example_bootstrap.py  without access to the global site-packages dir:
 $ python  create_env.py example_env --no-site-packages
 
+here the third part library of 'requests' will be added into example_env via the pip which located example_env/bin/pip
 
 
 
